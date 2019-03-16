@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM node:8
 
 # Install pygments (for syntax highlighting) 
 RUN apt-get -qq update \
@@ -8,7 +8,7 @@ RUN apt-get -qq update \
 # Configuration variables
 ENV HUGO_VERSION 0.54.0
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
-ENV SITE_DIR '/usr/share/blog'
+ENV SITE_DIR '/usr/share/site'
 
 # Download and install hugo
 RUN curl -sL -o /tmp/hugo.deb \
