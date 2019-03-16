@@ -5,6 +5,9 @@ RUN apt-get -qq update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends libstdc++6 python-pygments git ca-certificates asciidoc curl \
 	&& rm -rf /var/lib/apt/lists/*
 
+# Add firebase tools
+RUN npm install -g firebase-tools
+
 # Configuration variables
 ENV HUGO_VERSION 0.54.0
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
